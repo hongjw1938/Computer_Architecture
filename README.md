@@ -9,4 +9,4 @@
 - 6-2. A_O : 정수연산, 부동소수점 연산, 바이어스
 - 7. control_unit : 제어장치
 - 8-1. Memory : 기억장치. 종류, 계층
-- 8-2. Memory
+- 8-2. Memory : 반도체기억장치 - ROM, RAM
