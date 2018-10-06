@@ -10,3 +10,4 @@
 - 7. control_unit : 제어장치
 - 8-1. Memory : 기억장치. 종류, 계층
 - 8-2. Memory : 반도체기억장치 - ROM, RAM
+- 8-3. Memory : 기억장치 모듈 설계
