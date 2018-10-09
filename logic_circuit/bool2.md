@@ -1,0 +1,49 @@
+### 불 대수2
+- 간략화 합의(consensus) 정리
+  - XY + X'Z + YZ = XY + X'Z
+    - 증명
+      - XY + X'Z + (X+X')YZ = XY + X'Z + XYZ + X'YZ = XY(1+Z) + X'Z(1+Y) = XY+X'Z
+  - (X+Y)(X'+Z)(Y+Z) = (X+Y)(X'+Z)
+  - 간략화 예시
+    - A'B' + AC + BC' + B'C + AB
+      - 우선 A'B' AC B'C는 합의의 정리에 의해서 날라간다. 그래서 A'B' AC'만 남는다.
+      - A'B' + AC + BC' + AB 에서 AC와 BC' AB 또한 AB는 사라진다. 따라서
+    - A'B' + AC + BC'
+- 곱셈전개 / 인수분해에 유용한 정리
+  - (X+Y)(X'+Z) = XZ+X'Y : 분배 및 합의의 정리에 의해서 이루어짐
+  - 예)
+    - (Q+AB')(C'D+Q') = QC'D + AB'Q'
+- 간략화 절차
+  - 1. 항들의 조합
+       - XY+XY' = X
+       - 예) ABC'D' + ABC'D' = ABD'
+       - AB'C' + ABC + A'BC = AB'C' + ABC + A'BC + ABC = AC + BC(같은 항을 or로 한 번 더 추가한 것.)
+    2. 항들의 소거
+       - X+XY = X
+       - XY+X'Z+YZ = XY+X'Z
+    3. 문자들의 소거
+       - X+X'Y = X+Y
+       - 예)
+         - A'B + A'B'C'D' + ABCD' = A'(B+B'C'D') + ABCD' = A'(B+C'D') + ABCD' = A'B + A'C'D' + ABCD' = B(A'+ACD') + A'C'D = B(A'+CD') + A'C'D = A'B+A'C'D'+BCD'
+    4. 중복항의 추가에 의해 간략화
+       - XX'+ 혹은 (X+X') 이런식으로 추가해서 간략화 시킨다.
+       - 예)  WX+XY+X'Z'+WY'Z'
+         - 중복항 WZ'(합의의 정리)를 추가하면 WX+XY+X'Z'+WY'Z'+WZ' = WX+XY+X'Z'+WZ' = WX+XY+X'Z'
+- 연산자 XOR, XNOR
+  - XOR
+    - 배타적OR
+    - XOR의 연산자는.. ⊕
+    - 피 연산자 두 개의 값이 다르면 1, 같으면 0임.
+    - X⊕Y = X'Y+XY' = (X+Y)(X'+Y')
+    - XOR에 대한 정리
+      - X⊕0 = X
+      - X⊕1 = X'
+      - X⊕X = 0
+      - X⊕X' = 1
+      - X⊕Y = Y⊕X
+      - (X⊕Y)⊕Z = X⊕(Y⊕Z)=X⊕Y⊕Z
+      - X(Y⊕Z) = XY⊕XZ
+  - XNOR
+    - 등가연산
+    - 0 ≡ 0 = 1, 1≡1 = 1, 1≡0 OR 0≡1= 0
+    - X≡Y = (X⊕Y)' = XY+X'Y' = (X+X')(Y+Y')
