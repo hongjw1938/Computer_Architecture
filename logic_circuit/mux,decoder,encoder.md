@@ -1,0 +1,63 @@
+### 감산기, 멀티플렉서, 디코더, 프로그래머블 로직
+- 감산기
+  - 병렬가산기의 설계
+    - 2개의 4비트 무 부호화 2진수와 캐리 입력을 더해 4비트 합과 캐리 출력을 갖는 병렬 가산기 설계
+      - 하나의 접근 방법은 9개의 입력과 5개의 출력을 갖는 진리표 작성하고, 5개의 출력식을 구하고 간략화하는 것.
+      - 매우 어려운 방법이며, 논리 회로도 복잡
+      - 또 다른 방법은 2개의 1비트 입력, 1개의 캐리를 더하는 노리 모듈 설계하고 4비트 가상 구성위해 모듈 4개 연결
+      - 각 모듈이 전가산기
+      - ![Alt text](/images/logic_circuit/7-0.png)
+    - 오버플로우는 2의 보수를 써서 최상위 비트와 결과 비교
+      - V = A_3'B_3'S_3 + A_3B_3S_3'
+  - 병렬 감산기 설계
+    - 2의 보수를 갖는 4비트 가산기와 인버터로 구성
+    - 4비트 가산기의 입력 B를 반전하고 C0에 1 입력
+    - 4번째 비트 최종단에서 발생한 캐리는 버려짐
+      - ![Alt text](/images/logic_circuit/7-1.png)
+- 2진코드
+  - BCD(Binary Coded Decimal)
+    - 10진수를 2진수로 바꿈.
+    - ![Alt text](/images/logic_circuit/7-2.png)
+    - 문제 : 앞선 가산기 사용 못 함, 1011~1111까지는 없음
+  - 가중화 코드 예
+    - 8-4-2-1 BCD 코드
+    - 6-3-1-1 코드
+    - ![Alt text](/images/logic_circuit/7-3.png)
+  - 오류검출가능 코드
+  - 2-out-of-5 code
+  - gray code
+  - ![Alt text](/images/logic_circuit/7-4.png)
+  - 문자
+    - 아스키코드
+- 멀티플렉서, 디코더, 프로그래머블 논리소자
+  - ![Alt text](/images/logic_circuit/7-5.png)
+  - 멀티플렉서(데아터 선택기, MUX)
+    - 데이터 입력, 제어 입력으로 구성된 소자
+    - 제어 입력은 데이터 입력 중에서 하나 선택해 출력단과 연결하는 역할
+    - 2-to-1 멀티플렉서 및 등가 스위치
+    - ![Alt text](/images/logic_circuit/7-6.png)
+    - 이외 2^n입력 받는 멀티플렉서 가능
+    - ![Alt text](/images/logic_circuit/7-7.png)
+    - ![Alt text](/images/logic_circuit/7-8.png)
+      - 여러 신호가 하나의 그룹으로 묶어서 선 하나로 표현하는 것
+  - 버퍼(Buffer)
+    - 입력이 그대로 출력으로 가는 것, 논리적으론 무의미.. 물리적으로 의미 있다.
+    - 출력의 구동 능력을 향상시켜줌
+    - 3-set buffer
+      - ![Alt text](/images/logic_circuit/7-9.png)
+      - 위와 같은 경우 서로 다른 게이트 연결하다가 충돌이 나게 됨. 이럴 떄 buffer필요
+      - ![Alt text](/images/logic_circuit/7-10.png)
+      - ![Alt text](/images/logic_circuit/7-11.png)
+  - 디코더
+    - n개의 입력변수를 가진 함수의 모든 최소항 생성
+    - 입력변수에 따라 출력 선 중 단 하나만이 1이 됨.
+    - 3-to-9라인 디코더 진리표
+      - ![Alt text](/images/logic_circuit/7-12.png)
+    - 출력 반전시 NAND게이트 사용
+  - 인코더
+    - 디코더의 반대
+    - 2^n - to - n 입출력
+  - ROM(Read only memory)
+    - 2진 데이터 배열을 저장하기 위해 상호 연결된 반도체 소자의 배열로 구성
+    - 읽을 수는 있으나 변경은 불가
+    - 저장되는 각각의 출력 패턴을 워드라 부름.
