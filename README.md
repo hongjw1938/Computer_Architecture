@@ -11,3 +11,7 @@
 - 8-1. Memory : 기억장치. 종류, 계층
 - 8-2. Memory : 반도체기억장치 - ROM, RAM
 - 8-3. Memory : 기억장치 모듈 설계
+
+### 논리회로 : logic_circuit 디렉터리 참조
+
+### 네트워크 : network 디렉터리 참조
